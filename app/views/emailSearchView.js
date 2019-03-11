@@ -32,7 +32,7 @@ emailSearchView = {
             });
         }else{
             html += `<div class="single__result">
-                        <h5>No Email Found</h5>
+                        <h5>No Email</h5>
                     </div>`;
         }
 
