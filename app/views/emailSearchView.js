@@ -8,8 +8,7 @@ emailSearchView = {
                 var numberOfSource = "";
                 // Verify if a email have many sources
                 if(email.url.length > 1){
-                    var urls = email.url.split(',')
-                    urls.forEach((url) => {
+                    email.url.forEach((url) => {
                         sourceUrls += `<a href="${url}">${url}</a>`;
                     })
                     numberOfSource = email.url.length+' sources';
@@ -32,7 +31,7 @@ emailSearchView = {
             });
         }else{
             html += `<div class="single__result">
-                        <h5>No Email</h5>
+                        <h5>No Email Found</h5>
                     </div>`;
         }
 
@@ -49,6 +48,11 @@ emailSearchView = {
 
     // this function display Error when url is invalid
     displayUrlErrorMessage: function(){
-        resultContainer.innerHTML = '<h5 class="url__error">Please, enter a valid Url.</h5>';
-    }
+        resultContainer.innerHTML = '<h5 class="url__error alert alert-danger" role="alert">Please, enter a valid Url.</h5>';
+    },
+
+    // Display error if the have problem when searching
+    displayServerErrorMessage: function () {
+        resultContainer.innerHTML = '<h5 class="url__error alert alert-danger" role="alert">An error occured", "Please refresh the page and try again.</h5>';
+    },
 }

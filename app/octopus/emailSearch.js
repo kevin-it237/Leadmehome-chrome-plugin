@@ -1,6 +1,7 @@
 const searchBtn = document.getElementById('search__btn');
 const resultContainer = document.getElementById('results');
 const showMoreBtn = document.getElementById('showmore');
+const urlField = document.getElementById('url__field')
 var P = 0;
 
 // This function take url and p value and make search for emails
@@ -16,16 +17,14 @@ async function findEmails(url, p) {
         // Display results
         emailSearchView.displayEmails(emails, p, isShowMore);
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        emailSearchView.displayServerErrorMessage();
     }
 }
 
 // Display loader when searching results
 renderLoader = () => {
-    const loader = `
-        <p class="loader">Finding...</p>
-    `;
-
+    const loader = `<p class="loader"><i class="fas fa-spinner fa-2x fa-spin"></i></p>`;
     resultContainer.innerHTML += loader;
 }
 
@@ -60,6 +59,25 @@ searchBtn.addEventListener('click', function() {
         findEmails(url, P);
     }else{
         emailSearchView.displayUrlErrorMessage()
+    }
+});
+
+// Execute a function when the user releases a key on the keyboard
+urlField.addEventListener("keyup", function (event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        let url = document.getElementById('url__field').value;
+        // Verify url
+        if (validURL(url)) {
+            P = 0;
+            resultContainer.innerHTML = "";
+            renderLoader();
+            findEmails(url, P);
+        } else {
+            emailSearchView.displayUrlErrorMessage()
+        }
     }
 });
 

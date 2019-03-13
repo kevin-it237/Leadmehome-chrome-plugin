@@ -1,10 +1,13 @@
 html{
-    font-size: 9px;
+    font-size: 9.5px;
+}
+html,body,*{
+    font-family: 'Open Sans', sans-serif;
 }
 
 #content{
     width: 80rem;
-    height: 40rem;
+    height: 42rem;
     padding: 2rem;
 }
 
@@ -102,11 +105,11 @@ html{
 /**Email Search**/
 
 #menu1 {
-    width: 93%;
+    width: 92%;
 }
 
 #menu1 p{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .emails__search__form{
@@ -208,8 +211,8 @@ html{
 
 .url__error{
     font-weight: 500;
-    font-size: 1.8rem;
-    color: red;
+    font-size: 1.7rem;
+    text-align: center;
 }
 
 /**Email Finder**/
@@ -314,4 +317,27 @@ html{
     background-color: white;
     border-radius: .4rem;
     cursor: pointer;
+}
+
+.elements__box{
+    margin-top: 3rem;
+}
+
+.bulk__export, .bulk__export:link, .bulk__export:focus{
+    font-size: 1.8rem;
+    padding: .8rem 3.5rem;
+    border: solid 1.5px #333333;
+    background-color: white;
+    color: black !important;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.bulk__export:hover{
+    background-color: #eeeeef !important;
+    color: #333333 !important
+}
+
+.s_loader i{
+    margin-top: 1rem;
 }
