@@ -2,7 +2,7 @@
     "name": "Leadmehome",
     "version": "1.0",
     "description": "Find Emails for your prospects",
-    "permissions": ["activeTab", "declarativeContent", "storage", "https://leadmehome.io/"],
+    "permissions": ["activeTab", "declarativeContent", "https://leadmehome.io/"],
 
     "background": {
         "scripts": ["script/background.js"],

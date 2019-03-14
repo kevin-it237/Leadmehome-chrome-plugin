@@ -39,10 +39,11 @@ emailSearchView = {
         clearLoader();
         resultContainer.innerHTML += html;
         // Display or not Show more button
+        const showMoreBtn = document.getElementById('showmore');
         if(isShowMore){
-            showMoreBtn.style.display = "block";
+            showMoreBtn.style.visibility = "visible";
         }else{
-            showMoreBtn.style.display = "none";
+            showMoreBtn.style.visibility = "hidden";
         }
     },
 
@@ -54,5 +55,19 @@ emailSearchView = {
     // Display error if the have problem when searching
     displayServerErrorMessage: function () {
         resultContainer.innerHTML = '<h5 class="url__error alert alert-danger" role="alert">An error occured", "Please refresh the page and try again.</h5>';
+    },
+
+    // Display download Button
+    displayExportBtn: (n) => {
+        const buttonBox = document.querySelector(`.export`);
+        buttonBox.innerHTML = `<a id="export__btn" class="btn  emails__export" href="#">Export <span>${n}</span></a>`;
+    },
+
+    // Hide download Button
+    hideExportBtn: () => {
+        const exportBtn = document.querySelector(`.emails__export`);
+        if (exportBtn) {
+            exportBtn.parentElement.removeChild(exportBtn);
+        }
     },
 }
