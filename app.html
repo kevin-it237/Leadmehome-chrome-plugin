@@ -88,8 +88,28 @@
 
                     <!--Lead Finder Section-->
                     <div id="menu4" class="tab-pane fade">
-                        <h4 class="section__title">Coming soon...</h4>
-                        <!-- <h4 class="section__title">Lead Finder</h4> -->
+                        <h4 class="section__title">Lead Finder</h4>
+                        <div class="form">
+                            <input type="text" id="city" placeholder="City" value="newport" class="form-control city">
+                            <input type="text" id="niche" placeholder="Niche" value="crossfit" class="form-control niche">
+                            <button id="findLead" class="btn"><i class="fa fa-search"></i></button>
+                        </div>
+
+                        <div class="copied text-center"><span>Copied to the clipboard</span></div>
+                        
+                        <!--Result Content-->
+                        <div id="leadResults">
+                            <div id="leadResultsContent">
+                                
+                            </div>
+                        </div>
+                        
+                        <!--Show More button and export button -->
+                        <div class="showmore showmore__export">
+                            <button id="leadShowmore" class="btn">Show More</button>
+                            <div class="leadExport"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -109,6 +129,10 @@
     <!--Bulk Search -->
     <script src="/app/views/bulkSearchView.js"></script>
     <script src="/app/octopus/bulkSearch.js"></script>
+
+    <!--Lead Finder -->
+    <script src="/app/views/leadFinderView.js"></script>
+    <script src="/app/octopus/leadFinder.js"></script>
     
 </body>
 </html>
